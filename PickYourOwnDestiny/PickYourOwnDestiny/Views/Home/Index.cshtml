@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Pick Your Own Destiny</h1>
+    <p class="lead">Are YOU ready to Pick Your Own Destiny?</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <button type="button" class="btn btn-default" onclick="location.href = '../Home/Adventure'">Start by Creating a Character!</button>
+    </div>
+    <div class="col-md-4">
+        <button type="button" class="btn btn-default" @Url.Action("Login", "HomeController") disabled>Already have a Character? Login!</button>
+    </div>
+</div>

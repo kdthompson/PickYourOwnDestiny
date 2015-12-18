@@ -1,0 +1,55 @@
+﻿
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <form>
+                <div id="characterInformation">
+                    <div class="input-group">
+                        <input type="text" id="characterName" class="form-control" name="characterName" placeholder="Your Character's Name" />
+                    </div>
+
+                    <div class="characterTitle">Race: <span id="raceSelection">Select Your Race</span></div>
+
+                    <div class="characterTitle">Class: <span id="classSelection">Select Your Class</span></div>
+                </div>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Human">Human</button>
+                    <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Elf">Elf</button>
+                    <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Dwarf">Dwarf</button>
+                </div>
+
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Warrior">Warrior</button>
+                    <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Ranger">Ranger</button>
+                    <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Wizard">Wizard</button>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-default">Start your Adventure</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div>
+                @foreach (var dir in Model.dirs)
+                {
+                    foreach (var img in dir.images)
+                    {
+                        <img src="/Content/Images/CharacterImages/@img.name" alt="@img.name" class="thumbnail hidden characterImage" />
+                    }
+                }
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="characterTitle col-sm-6">Your Character Stats</div>
+            <div class="col-sm-6">
+                <ul class="list-group">
+                    <li class="list-group-item"><span class="badge" id="str">0</span>Strength</li>
+                    <li class="list-group-item"><span class="badge" id="dex">0</span>Dexterity</li>
+                    <li class="list-group-item"><span class="badge" id="knw">0</span>Knowledge</li>
+                    <li class="list-group-item"><span class="badge" id="health">0</span>Health</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
