@@ -1,7 +1,9 @@
-﻿
-<div class="container">
+﻿<div class="container">
     <div class="row">
-        <div class="col-sm-3">
+        <div class="screenTitle">
+            <h1>Character Creation</h1>
+        </div>
+        <div class="col-sm-4">
             <form>
                 <div id="characterInformation">
                     <div class="input-group">
@@ -12,19 +14,21 @@
 
                     <div class="characterTitle">Class: <span id="classSelection">Select Your Class</span></div>
                 </div>
-
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Human">Human</button>
-                    <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Elf">Elf</button>
-                    <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Dwarf">Dwarf</button>
+                <div class="col-sm-6">
+                    <div class="btn-group charButton" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Human">Human</button>
+                        <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Elf">Elf</button>
+                        <button type="button" class="btn btn-default" onclick="RaceButtonHandler(this)" value="Dwarf">Dwarf </button>
+                    </div>
                 </div>
-
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Warrior">Warrior</button>
-                    <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Ranger">Ranger</button>
-                    <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Wizard">Wizard</button>
+                <div class="col-sm-6">
+                    <div class="btn-group charButton" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Warrior">Warrior</button>
+                        <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Ranger">Ranger</button>
+                        <button type="button" class="btn btn-default" onclick="ClassButtonHandler(this)" value="Wizard">Wizard</button>
+                    </div>
                 </div>
-                <div>
+                <div class="col-sm-12 charButton" style="text-align:center; padding: 5px;">
                     <button type="submit" class="btn btn-default">Start your Adventure</button>
                 </div>
             </form>
@@ -40,10 +44,10 @@
                 }
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="characterTitle col-sm-6">Your Character Stats</div>
-            <div class="col-sm-6">
-                <ul class="list-group">
+        <div class="col-sm-5">
+            <div class="characterTitle">
+                <h3>Your Character Stats</h3>
+                <ul class="list-group stats">
                     <li class="list-group-item"><span class="badge" id="str">0</span>Strength</li>
                     <li class="list-group-item"><span class="badge" id="dex">0</span>Dexterity</li>
                     <li class="list-group-item"><span class="badge" id="knw">0</span>Knowledge</li>

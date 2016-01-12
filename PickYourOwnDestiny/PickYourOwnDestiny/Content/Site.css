@@ -1,12 +1,22 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+   margin:0;
+   padding:0;
+   height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-top: 50px;
+    padding:10px;
+    padding-bottom:60px;   /* Height of the footer */
+}
+
+header {
+   padding:10px;
+   color:white;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size:40px;
+   text-align: center;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -14,6 +24,10 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.jumbotron {
+    background-color:lightgrey;
 }
 
 /* styles for validation helpers */
@@ -40,3 +54,55 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+body {
+    background-color: black;
+}
+
+#bodyBlock {
+    background-color: beige;
+    padding:10px;
+    border-radius: 4px;
+    min-height: 600px;
+}
+
+footer {
+   width:100%;
+   height:30px;   /* Height of the footer */
+   color: white;
+   text-align:center;
+}
+
+#wrapper {
+    min-height:100%;
+   position:relative;
+}
+
+.characterTitle {
+    font: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+}
+
+.screenTitle {
+    text-align: center;
+}
+
+ .charButton {
+     padding: 10px;
+     width:40px;
+ }
+
+ .btn {
+     font-size:large;
+     min-width: 90px;
+ }
+
+ .characterImage {
+     max-height: 300px;
+ }
+
+ ul > li {
+     max-width: 50%;
+     font-size:large;
+ }
