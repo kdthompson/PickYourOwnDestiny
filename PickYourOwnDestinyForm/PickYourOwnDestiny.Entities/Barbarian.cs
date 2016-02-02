@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PickYourOwnDestiny.Entities
 {
-    class Barbarian : Character
+    public class Barbarian : Character
     {
         public Barbarian()
         {

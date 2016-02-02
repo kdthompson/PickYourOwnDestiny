@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PickYourOwnDestiny.Entities
 {
-    class AlleyBrawlAdventure: Adventure
+    public class AlleyBrawlAdventure: Adventure
     {
         public AlleyBrawlAdventure()
         {
-            this.StoryModeTracker = 1;
+            this.StoryModeTracker = 5;
             this.StoryText = "You step outside and start walking down a dark alley. Suddenly, you are surrounded by 5 very large men, who all appear to be armed with clubs or knives...";
             this.Choice1ButtonText = "Run up the pile of trash next to the wall and jump over them";
             this.Choice1Success = 25;

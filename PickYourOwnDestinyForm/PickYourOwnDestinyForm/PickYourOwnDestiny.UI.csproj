@@ -50,10 +50,19 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainAdventureScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainAdventureScreen.Designer.cs">
+      <DependentUpon>MainAdventureScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainAdventureScreen.resx">
+      <DependentUpon>MainAdventureScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PickYourOwnDestiny.Entities\PickYourOwnDestiny.Entities.csproj">
+      <Project>{fc4c6e97-444e-4293-8d67-9bf298038676}</Project>
+      <Name>PickYourOwnDestiny.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
