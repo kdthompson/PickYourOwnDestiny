@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PickYourOwnDestiny.UI
 {
-    public partial class ScreenLoad : Form
+    public partial class LoadingScreen : Form
     {
-        public ScreenLoad()
+        public LoadingScreen()
         {
             InitializeComponent();
         }
