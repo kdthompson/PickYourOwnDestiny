@@ -46,6 +46,7 @@
     <Compile Include="AlleyBrawlAdventure.cs" />
     <Compile Include="Barbarian.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Demon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
