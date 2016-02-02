@@ -31,7 +31,7 @@ namespace PYOD_Slpash
             {
                 timerSplash.Stop();
                 Console.WriteLine("in");
-                ScreenLoad f2 = new ScreenLoad();
+                LoadingScreen f2 = new LoadingScreen();
                 this.Hide();
                 f2.Show();
             }
