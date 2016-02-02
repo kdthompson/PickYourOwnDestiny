@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PickYourOwnDestiny.UI;
 
 namespace PYOD_Slpash
 {
@@ -30,7 +31,7 @@ namespace PYOD_Slpash
             {
                 timerSplash.Stop();
                 Console.WriteLine("in");
-                PickYourOwnDestiny.UI.ScreenLoad f2 = new PickYourOwnDestiny.UI.ScreenLoad();
+                ScreenLoad f2 = new ScreenLoad();
                 this.Hide();
                 f2.Show();
             }

@@ -62,7 +62,6 @@
     <Compile Include="LoadingScreen.Designer.cs">
       <DependentUpon>LoadingScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadSlplash.cs" />
     <Compile Include="LoadSplash.cs">
       <SubType>Form</SubType>
     </Compile>
