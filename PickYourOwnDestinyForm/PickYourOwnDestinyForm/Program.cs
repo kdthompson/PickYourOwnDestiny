@@ -19,6 +19,7 @@ namespace PickYourOwnDestiny.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoadSplash());
+            //Application.Run(new MainAdventureScreen());
         }
     }
 }
