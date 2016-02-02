@@ -47,8 +47,9 @@
             // 
             // LoadingScreen_Continue
             // 
-            this.LoadingScreen_Continue.BackgroundImage = global::PickYourOwnDestiny.UI.Properties.Resources.Continue;
             this.LoadingScreen_Continue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LoadingScreen_Continue.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.LoadingScreen_Continue.Image = global::PickYourOwnDestiny.UI.Properties.Resources.Continue;
             this.LoadingScreen_Continue.InitialImage = ((System.Drawing.Image)(resources.GetObject("LoadingScreen_Continue.InitialImage")));
             this.LoadingScreen_Continue.Location = new System.Drawing.Point(444, 57);
             this.LoadingScreen_Continue.Name = "LoadingScreen_Continue";
@@ -59,8 +60,8 @@
             // 
             // LoadingScreen_Start
             // 
-            this.LoadingScreen_Start.BackgroundImage = global::PickYourOwnDestiny.UI.Properties.Resources.Start;
             this.LoadingScreen_Start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LoadingScreen_Start.Image = global::PickYourOwnDestiny.UI.Properties.Resources.Start;
             this.LoadingScreen_Start.InitialImage = ((System.Drawing.Image)(resources.GetObject("LoadingScreen_Start.InitialImage")));
             this.LoadingScreen_Start.Location = new System.Drawing.Point(69, 57);
             this.LoadingScreen_Start.Name = "LoadingScreen_Start";
