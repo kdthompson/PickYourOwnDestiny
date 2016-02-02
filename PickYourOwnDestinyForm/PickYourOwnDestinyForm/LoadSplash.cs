@@ -30,7 +30,7 @@ namespace PYOD_Slpash
             {
                 timerSplash.Stop();
                 Console.WriteLine("in");
-                LoadingScreen f2 = new LoadingScreen();
+                PickYourOwnDestiny.UI.ScreenLoad f2 = new PickYourOwnDestiny.UI.ScreenLoad();
                 this.Hide();
                 f2.Show();
             }
