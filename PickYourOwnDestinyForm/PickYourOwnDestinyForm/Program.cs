@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PickYourOwnDestiny;
+using PYOD_Slpash;
 
 namespace PickYourOwnDestiny.UI
 {
@@ -16,7 +18,7 @@ namespace PickYourOwnDestiny.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.Run(new LoadSplash());
         }
     }
 }
