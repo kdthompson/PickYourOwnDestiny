@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Death.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Death.designer.cs">
+      <DependentUpon>Death.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="ScreenLoad.Designer.cs">
       <DependentUpon>ScreenLoad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Death.resx">
+      <DependentUpon>Death.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
