@@ -50,6 +50,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadSplash.designer.cs">
+      <DependentUpon>LoadSplash.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainAdventureScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadSplash.resx">
+      <DependentUpon>LoadSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainAdventureScreen.resx">
       <DependentUpon>MainAdventureScreen.cs</DependentUpon>
