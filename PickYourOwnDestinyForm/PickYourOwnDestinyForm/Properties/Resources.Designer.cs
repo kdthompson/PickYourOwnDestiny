@@ -63,29 +63,9 @@ namespace PickYourOwnDestiny.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Book_Animation {
-            get {
-                object obj = ResourceManager.GetObject("Book_Animation", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Continue {
             get {
                 object obj = ResourceManager.GetObject("Continue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Continue_Book_Animation {
-            get {
-                object obj = ResourceManager.GetObject("Continue_Book_Animation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
