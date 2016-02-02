@@ -12,9 +12,17 @@ namespace PickYourOwnDestiny.UI
 {
     public partial class FormMain : Form
     {
+
+
         public FormMain()
         {
             InitializeComponent();
+        }
+
+        private void button_StartGame_Click_1(object sender, EventArgs e)
+        {
+            MainAdventureScreen mas = new MainAdventureScreen();
+            mas.Show();
         }
     }
 }

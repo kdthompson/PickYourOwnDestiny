@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PickYourOwnDestiny.Entities
 {
-    class Adventure
+    public class Adventure
     {
         public int StoryModeTracker { get; set; }
         public string StoryText { get; set; }
