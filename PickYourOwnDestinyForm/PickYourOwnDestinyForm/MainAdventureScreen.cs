@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PickYourOwnDestiny.Entities;
+using PYOD_Slpash;
 
 namespace PickYourOwnDestiny.UI
 {
@@ -95,9 +96,14 @@ namespace PickYourOwnDestiny.UI
 
         private void button_MainActivity_Continue_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            //_Character.StoryModeTracker += 1;
-            //SetUpAdventure();
+            _Character.HitPoints = 0;
+
+            if (_Character.HitPoints <= 0)
+            {
+                this.Hide();
+                Death death = new Death();
+                death.Show();
+            }
         }
 
         private void quit_MenuItem_MainActivity_Click(object sender, EventArgs e)
