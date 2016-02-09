@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingScreen));
             this.Loading_TextBox = new System.Windows.Forms.RichTextBox();
             this.LoadingScreen_Continue = new System.Windows.Forms.PictureBox();
             this.LoadingScreen_Start = new System.Windows.Forms.PictureBox();
@@ -41,6 +40,7 @@
             this.Loading_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loading_TextBox.Location = new System.Drawing.Point(172, 445);
             this.Loading_TextBox.Name = "Loading_TextBox";
+            this.Loading_TextBox.ReadOnly = true;
             this.Loading_TextBox.Size = new System.Drawing.Size(503, 52);
             this.Loading_TextBox.TabIndex = 2;
             this.Loading_TextBox.Text = "Welcome! Please selected an option.";
@@ -50,7 +50,7 @@
             this.LoadingScreen_Continue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LoadingScreen_Continue.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.LoadingScreen_Continue.Image = global::PickYourOwnDestiny.UI.Properties.Resources.Continue;
-            this.LoadingScreen_Continue.InitialImage = ((System.Drawing.Image)(resources.GetObject("LoadingScreen_Continue.InitialImage")));
+            this.LoadingScreen_Continue.InitialImage = global::PickYourOwnDestiny.UI.Properties.Resources.Continue;
             this.LoadingScreen_Continue.Location = new System.Drawing.Point(444, 57);
             this.LoadingScreen_Continue.Name = "LoadingScreen_Continue";
             this.LoadingScreen_Continue.Size = new System.Drawing.Size(325, 349);
@@ -62,7 +62,7 @@
             // 
             this.LoadingScreen_Start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LoadingScreen_Start.Image = global::PickYourOwnDestiny.UI.Properties.Resources.Start;
-            this.LoadingScreen_Start.InitialImage = ((System.Drawing.Image)(resources.GetObject("LoadingScreen_Start.InitialImage")));
+            this.LoadingScreen_Start.InitialImage = global::PickYourOwnDestiny.UI.Properties.Resources.Start;
             this.LoadingScreen_Start.Location = new System.Drawing.Point(69, 57);
             this.LoadingScreen_Start.Name = "LoadingScreen_Start";
             this.LoadingScreen_Start.Size = new System.Drawing.Size(325, 349);

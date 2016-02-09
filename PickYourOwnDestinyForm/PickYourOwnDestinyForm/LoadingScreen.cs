@@ -23,13 +23,9 @@ namespace PickYourOwnDestiny.UI
                 ,MessageBoxButtons.YesNo);
             if(conformationStart == DialogResult.Yes)
             {
-                CharacterCreation CC = new CharacterCreation();
-                this.Hide();
-                CC.Show();
-            }
-            else
-            {
-                //stuff
+                //CharacterCreation f3 = new CharacterCreation ();
+                //this.Hide();
+                //f3.Show();
             }
         }
 
@@ -39,11 +35,9 @@ namespace PickYourOwnDestiny.UI
                 , MessageBoxButtons.YesNo);
             if (conformationLoad == DialogResult.Yes)
             {
-                //stuff
-            }
-            else
-            {
-                //stuff
+                //CharacterLoad f4 = new CharacterLoad ();
+                //this.Hide();
+                //f3.Show();
             }
         }
     }
