@@ -11,8 +11,8 @@ namespace PickYourOwnDestiny.UI
     {
         String dbConnectionString;
         SQLiteConnection con;
-        int HEROPOINTS = 20, HITPOINTS = 20;
-        public dbHelper(String dbFile)
+        
+        public  dbHelper(String dbFile)
         {
             dbConnectionString = String.Format("Data Source={0}", dbFile);
             con = new SQLiteConnection(dbConnectionString);
@@ -25,10 +25,10 @@ namespace PickYourOwnDestiny.UI
                 throw new Exception(e.Message);
             }
         }
-        public bool createCharacter(String charName,String charRace,String charClass, int mStrength, int mDex, int mKnow)
+        public bool createCharacter(String charName,String charRace,String charClass, int mStrength, int mDex, int mKnow, int mHitPoints, int mHeroPoints)
         {
             String mSQL = String.Format("insert into Character(Name,Race,CharClass,Strength,Dexterity,Knowledge,HitPoints,HeroPoints,StoryTracker)" +
-                                        "values('{0}','{1}','{2}',{3},{4},{5},{6},{7},1)", charName,charRace,charClass,mStrength,mDex,mKnow,HITPOINTS,HEROPOINTS);
+                                        "values('{0}','{1}','{2}',{3},{4},{5},{6},{7},1)", charName, charRace, charClass, mStrength, mDex, mKnow, mHitPoints, mHeroPoints);
             SQLiteCommand mCommand = new SQLiteCommand(mSQL,con);
          try
             {

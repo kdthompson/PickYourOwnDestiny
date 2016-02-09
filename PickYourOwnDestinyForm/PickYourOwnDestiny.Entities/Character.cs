@@ -38,5 +38,19 @@ namespace PickYourOwnDestiny.Entities
             this.HeroPoints = 0;
             this.StoryModeTracker = 0;
         }
+        public Character(String mName, String mClass, String mRace, int mStrength,
+            int mDexterity, int mKnowledge, int mHitPoints, int mHeroPoints)
+        {
+            this.Name = mName;
+            this.CharacterClass = mClass;
+            this.CharacterRace = mRace;
+            this.Strength = mStrength;
+            this.Dex = mDexterity;
+            this.Knowledge = mKnowledge;
+            this.HitPoints = mHitPoints;
+            this.HeroPoints = mHeroPoints;
+            this.StoryModeTracker = 1;
+        }
+
     }
 }
