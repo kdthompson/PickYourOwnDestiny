@@ -23,7 +23,9 @@ namespace PickYourOwnDestiny.UI
                 ,MessageBoxButtons.YesNo);
             if(conformationStart == DialogResult.Yes)
             {
-                //stuff
+                CharacterCreation CC = new CharacterCreation();
+                this.Hide();
+                CC.Show();
             }
             else
             {
