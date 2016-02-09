@@ -156,15 +156,19 @@
             // 
             this.textBox_MainAdventure_HitPoints.Location = new System.Drawing.Point(157, 14);
             this.textBox_MainAdventure_HitPoints.Name = "textBox_MainAdventure_HitPoints";
+            this.textBox_MainAdventure_HitPoints.ReadOnly = true;
             this.textBox_MainAdventure_HitPoints.Size = new System.Drawing.Size(24, 20);
-            this.textBox_MainAdventure_HitPoints.TabIndex = 8;
+            this.textBox_MainAdventure_HitPoints.TabIndex = 0;
+            this.textBox_MainAdventure_HitPoints.TabStop = false;
             // 
             // textBox_MainAdventure_CharacterName
             // 
             this.textBox_MainAdventure_CharacterName.Location = new System.Drawing.Point(552, 14);
             this.textBox_MainAdventure_CharacterName.Name = "textBox_MainAdventure_CharacterName";
+            this.textBox_MainAdventure_CharacterName.ReadOnly = true;
             this.textBox_MainAdventure_CharacterName.Size = new System.Drawing.Size(100, 20);
-            this.textBox_MainAdventure_CharacterName.TabIndex = 9;
+            this.textBox_MainAdventure_CharacterName.TabIndex = 0;
+            this.textBox_MainAdventure_CharacterName.TabStop = false;
             // 
             // MainAdventureScreen
             // 

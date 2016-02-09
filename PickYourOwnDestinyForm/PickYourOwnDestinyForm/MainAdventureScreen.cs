@@ -17,7 +17,6 @@ namespace PickYourOwnDestiny.UI
         private bool canBartander = true;
 
         Adventure _MainAdventure;
-        Character _Character;
 
 
         public MainAdventureScreen()
@@ -30,13 +29,12 @@ namespace PickYourOwnDestiny.UI
         {
             this.Text = "Pick Your Own Destiny";
 
-            _Character = new Barbarian();
             //Test purposes only
-            _Character.StoryModeTracker = 5;
-            textBox_MainAdventure_HitPoints.Text = _Character.HitPoints.ToString();
-            textBox_MainAdventure_CharacterName.Text = _Character.Name;
+            CharacterCreation.currentCharacter.StoryModeTracker = 5;
+            textBox_MainAdventure_HitPoints.Text = CharacterCreation.currentCharacter.HitPoints.ToString();
+            textBox_MainAdventure_CharacterName.Text = CharacterCreation.currentCharacter.Name;
 
-            switch (_Character.StoryModeTracker)
+            switch (CharacterCreation.currentCharacter.StoryModeTracker)
             {
                 //case 1:
                 //    _MainAdventure = new BarEntry();
@@ -98,9 +96,9 @@ namespace PickYourOwnDestiny.UI
 
         private void button_MainActivity_Continue_Click(object sender, EventArgs e)
         {
-            _Character.HitPoints = 0;
+            CharacterCreation.currentCharacter.HitPoints = 0;
 
-            if (_Character.HitPoints <= 0)
+            if (CharacterCreation.currentCharacter.HitPoints <= 0)
             {
                 this.Hide();
                 Death death = new Death();
