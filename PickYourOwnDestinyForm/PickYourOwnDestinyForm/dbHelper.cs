@@ -27,7 +27,7 @@ namespace PickYourOwnDestiny.UI
         }
         public bool createCharacter(String charName,String charRace,String charClass, int mStrength, int mDex, int mKnow)
         {
-            String mSQL = String.Format("insert into Character(Name,Race,CharClass,Strength,Dexterity,Knowlege,HitPoints,HeroPoints,StoryTracker)" +
+            String mSQL = String.Format("insert into Character(Name,Race,CharClass,Strength,Dexterity,Knowledge,HitPoints,HeroPoints,StoryTracker)" +
                                         "values('{0}','{1}','{2}',{3},{4},{5},{6},{7},1)", charName,charRace,charClass,mStrength,mDex,mKnow,HITPOINTS,HEROPOINTS);
             SQLiteCommand mCommand = new SQLiteCommand(mSQL,con);
          try
