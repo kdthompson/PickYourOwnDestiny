@@ -6,7 +6,7 @@ namespace PYOD_Slpash
 {
     public partial class LoadSplash : Form
     {
-        public int count = 1;
+        public int count = 3;
         
         public LoadSplash()
         {
