@@ -33,6 +33,8 @@ namespace PickYourOwnDestiny.UI
             _Character = new Barbarian();
             //Test purposes only
             _Character.StoryModeTracker = 5;
+            textBox_MainAdventure_HitPoints.Text = _Character.HitPoints.ToString();
+            textBox_MainAdventure_CharacterName.Text = _Character.Name;
 
             switch (_Character.StoryModeTracker)
             {
@@ -62,7 +64,7 @@ namespace PickYourOwnDestiny.UI
 
         private void SetPreChoiceText()
         {
-            this.textbox_MainAdventure.Text = _MainAdventure.StoryText;
+            this.textbox_MainAdventure_Text.Text = _MainAdventure.StoryText;
             this.button_MainActivity_Choice1.Text = _MainAdventure.Choice1ButtonText;
             this.button_MainActivity_Choice2.Text = _MainAdventure.Choice2ButtonText;
             this.button_MainActivity_Choice3.Text = _MainAdventure.Choice3ButtonText;
@@ -76,21 +78,21 @@ namespace PickYourOwnDestiny.UI
         private void button_MainActivity_Choice1_Click(object sender, EventArgs e)
         {
             DisableAllChoices();
-            this.textbox_MainAdventure.Text = _MainAdventure.Choice1ResultText;
+            this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice1ResultText;
             PostTextChoice();
         }
 
         private void button_MainActivity_Choice2_Click(object sender, EventArgs e)
         {
             DisableAllChoices();
-            this.textbox_MainAdventure.Text = _MainAdventure.Choice2ResultText;
+            this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice2ResultText;
             PostTextChoice();
         }
 
         private void button_MainActivity_Choice3_Click(object sender, EventArgs e)
         {
             DisableAllChoices();
-            this.textbox_MainAdventure.Text = _MainAdventure.Choice3ResultText;
+            this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice3ResultText;
             PostTextChoice();
         }
 
