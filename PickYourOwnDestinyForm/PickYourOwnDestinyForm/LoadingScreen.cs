@@ -27,10 +27,6 @@ namespace PickYourOwnDestiny.UI
                 //this.Hide();
                 //f3.Show();
             }
-            else
-            {
-                //stuff
-            }
         }
 
         private void LoadingScreen_Continue_Click(object sender, EventArgs e)
@@ -42,10 +38,6 @@ namespace PickYourOwnDestiny.UI
                 //CharacterLoad f4 = new CharacterLoad ();
                 //this.Hide();
                 //f3.Show();
-            }
-            else
-            {
-                //stuff
             }
         }
     }
