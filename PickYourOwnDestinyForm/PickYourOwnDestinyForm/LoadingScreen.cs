@@ -35,9 +35,9 @@ namespace PickYourOwnDestiny.UI
                 , MessageBoxButtons.YesNo);
             if (conformationLoad == DialogResult.Yes)
             {
-                //CharacterLoad f4 = new CharacterLoad ();
-                //this.Hide();
-                //f3.Show();
+                CharacterLoad f4 = new CharacterLoad ();
+                this.Hide();
+                f4.Show();
             }
         }
     }

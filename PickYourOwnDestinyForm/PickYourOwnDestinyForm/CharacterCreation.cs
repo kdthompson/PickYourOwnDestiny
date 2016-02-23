@@ -150,8 +150,7 @@ namespace PickYourOwnDestiny.UI
                 int mBtnStrength = Int32.Parse(tbStrength.Text);
                 int mBtnDex = Int32.Parse(tbDex.Text);
                 int mBtnKnow = Int32.Parse(tbKnow.Text);
-                String mConnectionString="c:\\PYOD\\PYOD.db";
-                dbHelper  mDBHelper = new dbHelper(mConnectionString);
+                dbHelper mDBHelper = dbHelper.Instance;
                 if (mDBHelper.createCharacter(tbCharName.Text.ToString(), mCharRace, mCharClass, mBtnStrength, mBtnDex, mBtnKnow,HITPOINTS,HEROPOINTS))
                 {
                     MessageBox.Show("CONGRATULATIONS! You may now go forth and pick your destiny!");

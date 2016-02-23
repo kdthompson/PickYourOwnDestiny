@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using PickYourOwnDestiny.Entities;
 
 namespace PickYourOwnDestiny.UI
 {
@@ -11,10 +12,12 @@ namespace PickYourOwnDestiny.UI
     {
         String dbConnectionString;
         SQLiteConnection con;
-        
-        public  dbHelper(String dbFile)
+        private static dbHelper instance;
+        String mConnectionString = "c:\\PYOD\\PYOD.db";
+
+        private  dbHelper()
         {
-            dbConnectionString = String.Format("Data Source={0}", dbFile);
+            dbConnectionString = String.Format("Data Source={0}", mConnectionString);
             con = new SQLiteConnection(dbConnectionString);
             try
             {
@@ -25,6 +28,18 @@ namespace PickYourOwnDestiny.UI
                 throw new Exception(e.Message);
             }
         }
+        public static dbHelper Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new dbHelper();
+                }
+                return instance;
+            }
+        }
+
         public bool createCharacter(String charName,String charRace,String charClass, int mStrength, int mDex, int mKnow, int mHitPoints, int mHeroPoints)
         {
             String mSQL = String.Format("insert into Character(Name,Race,CharClass,Strength,Dexterity,Knowledge,HitPoints,HeroPoints,StoryTracker)" +
@@ -41,6 +56,44 @@ namespace PickYourOwnDestiny.UI
             }
   
             return true;
+        }
+        public Adventure getAdventure(int StoryTrackerIndex)
+        {
+            ArrayList adventureList = new ArrayList();
+            string sql = "select * from Adventure where StoryTracker = " + StoryTrackerIndex;
+            Adventure _Adventure = null;
+            SQLiteCommand cmd = new SQLiteCommand(sql,con);
+            SQLiteDataReader sr = cmd.ExecuteReader();
+            while (sr.Read())
+            {
+                int max = sr.FieldCount;
+
+                for (int x = 0; x < max; x++)
+                {
+                    adventureList.Add(sr.GetValue(x));
+                }
+
+
+                _Adventure = new Adventure(adventureList);
+ 
+            }
+            return _Adventure;
+        }
+
+        public ArrayList getAtributeList(String tableName,String fieldName, String whereClause)
+        {
+            ArrayList attributeList = new ArrayList();
+
+            String sql = String.Format("select {0} from {1} {2}", fieldName, tableName, whereClause);
+            SQLiteCommand cmd = new SQLiteCommand(sql,con);
+            SQLiteDataReader sr = cmd.ExecuteReader();
+
+            while (sr.Read())
+            {
+                attributeList.Add(sr[fieldName]);
+            }
+
+            return attributeList;
         }
 
     }
