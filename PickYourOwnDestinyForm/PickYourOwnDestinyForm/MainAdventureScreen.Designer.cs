@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_MainAdventure_HitPoints = new System.Windows.Forms.TextBox();
             this.textBox_MainAdventure_CharacterName = new System.Windows.Forms.TextBox();
+            this.button_MainAdventure_TalkToBartender = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,11 +171,24 @@
             this.textBox_MainAdventure_CharacterName.TabIndex = 0;
             this.textBox_MainAdventure_CharacterName.TabStop = false;
             // 
+            // button_MainAdventure_TalkToBartender
+            // 
+            this.button_MainAdventure_TalkToBartender.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_MainAdventure_TalkToBartender.Location = new System.Drawing.Point(491, 367);
+            this.button_MainAdventure_TalkToBartender.Name = "button_MainAdventure_TalkToBartender";
+            this.button_MainAdventure_TalkToBartender.Size = new System.Drawing.Size(281, 39);
+            this.button_MainAdventure_TalkToBartender.TabIndex = 8;
+            this.button_MainAdventure_TalkToBartender.TabStop = false;
+            this.button_MainAdventure_TalkToBartender.Text = "Talk to Bartender";
+            this.button_MainAdventure_TalkToBartender.UseVisualStyleBackColor = true;
+            this.button_MainAdventure_TalkToBartender.Click += new System.EventHandler(this.button_MainAdventure_TalkToBartender_Click);
+            // 
             // MainAdventureScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 539);
+            this.Controls.Add(this.button_MainAdventure_TalkToBartender);
             this.Controls.Add(this.textBox_MainAdventure_CharacterName);
             this.Controls.Add(this.textBox_MainAdventure_HitPoints);
             this.Controls.Add(this.label1);
@@ -209,5 +223,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_MainAdventure_HitPoints;
         private System.Windows.Forms.TextBox textBox_MainAdventure_CharacterName;
+        private System.Windows.Forms.Button button_MainAdventure_TalkToBartender;
     }
 }

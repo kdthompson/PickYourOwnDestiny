@@ -24,5 +24,10 @@ namespace PickYourOwnDestiny.UI
         {
 
         }
+
+        private void button_CharacterLoad_LoadCharater_Click(object sender, EventArgs e)
+        {
+            //dbHelper.Instance.
+        }
     }
 }

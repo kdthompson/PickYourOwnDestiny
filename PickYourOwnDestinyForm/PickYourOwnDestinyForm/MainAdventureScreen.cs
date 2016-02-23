@@ -14,7 +14,7 @@ namespace PickYourOwnDestiny.UI
 {
     public partial class MainAdventureScreen : Form
     {
-        private bool canBartander = true;
+        private bool _canBartander = true;
 
         Adventure _MainAdventure;
 
@@ -22,42 +22,45 @@ namespace PickYourOwnDestiny.UI
         public MainAdventureScreen()
         {
             InitializeComponent();
-            SetUpAdventure();
+            PlayGame();
         }
 
-        private void SetUpAdventure()
+        private void PlayGame()
         {
             this.Text = "Pick Your Own Destiny";
 
             //Test purposes only
-            CharacterCreation.currentCharacter.StoryModeTracker = 5;
-            textBox_MainAdventure_HitPoints.Text = CharacterCreation.currentCharacter.HitPoints.ToString();
-            textBox_MainAdventure_CharacterName.Text = CharacterCreation.currentCharacter.Name;
+            //CharacterCreation.currentCharacter.StoryModeTracker = 5;
+            //_MainAdventure = new AlleyBrawlAdventure();
+            //textBox_MainAdventure_HitPoints.Text = CharacterCreation.currentCharacter.HitPoints.ToString();
+            //textBox_MainAdventure_CharacterName.Text = CharacterCreation.currentCharacter.Name;
 
-            switch (CharacterCreation.currentCharacter.StoryModeTracker)
-            {
-                //case 1:
-                //    _MainAdventure = new BarEntry();
-                //    break;
-                //case 2:
-                //    _MainAdventure = new CardGame();
-                //    break;
-                //case 3:
-                //    _MainAdventure = new Riddler();
-                //    break;
-                //case 4:
-                //    _MainAdventure = new BarChallenge();
-                //    break;
-                case 5:
-                    _MainAdventure = new AlleyBrawlAdventure();
-                    break;
-                //case 6:
-                //    _MainAdventure = new EndScreen;
-                //case 0:
-                //    _MainAdventure = new Bartender();
-                //    break;
-            }
+            _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
             SetPreChoiceText();
+
+            //switch (CharacterCreation.currentCharacter.StoryModeTracker)
+            //{
+            //    case 1:
+            //        _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
+            //        break;
+            //    //case 2:
+            //    //    _MainAdventure = new CardGame();
+            //    //    break;
+            //    //case 3:
+            //    //    _MainAdventure = new Riddler();
+            //    //    break;
+            //    //case 4:
+            //    //    _MainAdventure = new BarChallenge();
+            //    //    break;
+            //    case 5:
+            //        _MainAdventure = new AlleyBrawlAdventure();
+            //        break;
+            //    //case 6:
+            //    //    _MainAdventure = new EndScreen;
+            //    //case 0:
+            //    //    _MainAdventure = new Bartender();
+            //    //    break;
+            //}
         }
 
         private void SetPreChoiceText()
@@ -96,8 +99,13 @@ namespace PickYourOwnDestiny.UI
 
         private void button_MainActivity_Continue_Click(object sender, EventArgs e)
         {
-            CharacterCreation.currentCharacter.HitPoints = 0;
+            CheckForGameOver();
+            CharacterCreation.currentCharacter.StoryModeTracker += 1;
+            PlayGame();
+        }
 
+        private void CheckForGameOver()
+        {
             if (CharacterCreation.currentCharacter.HitPoints <= 0)
             {
                 this.Hide();
@@ -125,6 +133,23 @@ namespace PickYourOwnDestiny.UI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button_MainAdventure_TalkToBartender_Click(object sender, EventArgs e)
+        {
+
+            if (_canBartander)
+            {
+                _MainAdventure = dbHelper.Instance.getAdventure(0);
+                _canBartander = false;
+                SetPreChoiceText();
+
+            }
+            else
+            {
+                var message = MessageBox.Show("The bar bouncer stops you from going up to see the Bartender", "Go Sit Back Down", MessageBoxButtons.OK);
+            }
 
         }
     }

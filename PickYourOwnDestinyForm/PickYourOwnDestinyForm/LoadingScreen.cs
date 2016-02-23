@@ -19,8 +19,7 @@ namespace PickYourOwnDestiny.UI
 
         private void LoadingScreen_Start_Click(object sender, EventArgs e)
         {
-            var conformationStart = MessageBox.Show("Are you sure you wish to start a new character?","Confirm Start" 
-                ,MessageBoxButtons.YesNo);
+            var conformationStart = MessageBox.Show("Are you sure you wish to start a new character?","Confirm Start",MessageBoxButtons.YesNo);
             if(conformationStart == DialogResult.Yes)
             {
                 CharacterCreation f3 = new CharacterCreation ();

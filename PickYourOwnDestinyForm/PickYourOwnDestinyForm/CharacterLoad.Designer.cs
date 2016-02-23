@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.cbCharacters = new System.Windows.Forms.ComboBox();
+            this.button_CharacterLoad_LoadCharater = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbCharacters
@@ -40,11 +41,22 @@
             this.cbCharacters.TabIndex = 0;
             this.cbCharacters.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // button_CharacterLoad_LoadCharater
+            // 
+            this.button_CharacterLoad_LoadCharater.Location = new System.Drawing.Point(213, 240);
+            this.button_CharacterLoad_LoadCharater.Name = "button_CharacterLoad_LoadCharater";
+            this.button_CharacterLoad_LoadCharater.Size = new System.Drawing.Size(121, 23);
+            this.button_CharacterLoad_LoadCharater.TabIndex = 1;
+            this.button_CharacterLoad_LoadCharater.Text = "Load Character";
+            this.button_CharacterLoad_LoadCharater.UseVisualStyleBackColor = true;
+            this.button_CharacterLoad_LoadCharater.Click += new System.EventHandler(this.button_CharacterLoad_LoadCharater_Click);
+            // 
             // CharacterLoad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 374);
+            this.Controls.Add(this.button_CharacterLoad_LoadCharater);
             this.Controls.Add(this.cbCharacters);
             this.Name = "CharacterLoad";
             this.Text = "CharacterLoad";
@@ -55,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbCharacters;
+        private System.Windows.Forms.Button button_CharacterLoad_LoadCharater;
     }
 }
