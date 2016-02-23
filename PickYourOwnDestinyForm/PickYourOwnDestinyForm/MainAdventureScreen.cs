@@ -14,55 +14,58 @@ namespace PickYourOwnDestiny.UI
 {
     public partial class MainAdventureScreen : Form
     {
-        private bool canBartander = true;
+        private bool _canBartander = true;
 
         Adventure _MainAdventure;
-        Character _Character;
 
 
         public MainAdventureScreen()
         {
             InitializeComponent();
-            SetUpAdventure();
+            PlayGame();
         }
 
-        private void SetUpAdventure()
+        private void PlayGame()
         {
             this.Text = "Pick Your Own Destiny";
 
-            _Character = new Barbarian();
             //Test purposes only
-            _Character.StoryModeTracker = 5;
+            //CharacterCreation.currentCharacter.StoryModeTracker = 5;
+            //_MainAdventure = new AlleyBrawlAdventure();
+            //textBox_MainAdventure_HitPoints.Text = CharacterCreation.currentCharacter.HitPoints.ToString();
+            //textBox_MainAdventure_CharacterName.Text = CharacterCreation.currentCharacter.Name;
 
-            switch (_Character.StoryModeTracker)
-            {
-                //case 1:
-                //    _MainAdventure = new BarEntry();
-                //    break;
-                //case 2:
-                //    _MainAdventure = new CardGame();
-                //    break;
-                //case 3:
-                //    _MainAdventure = new Riddler();
-                //    break;
-                //case 4:
-                //    _MainAdventure = new BarChallenge();
-                //    break;
-                case 5:
-                    _MainAdventure = new AlleyBrawlAdventure();
-                    break;
-                //case 6:
-                //    _MainAdventure = new EndScreen;
-                //case 0:
-                //    _MainAdventure = new Bartender();
-                //    break;
-            }
+            _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
             SetPreChoiceText();
+
+            //switch (CharacterCreation.currentCharacter.StoryModeTracker)
+            //{
+            //    case 1:
+            //        _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
+            //        break;
+            //    //case 2:
+            //    //    _MainAdventure = new CardGame();
+            //    //    break;
+            //    //case 3:
+            //    //    _MainAdventure = new Riddler();
+            //    //    break;
+            //    //case 4:
+            //    //    _MainAdventure = new BarChallenge();
+            //    //    break;
+            //    case 5:
+            //        _MainAdventure = new AlleyBrawlAdventure();
+            //        break;
+            //    //case 6:
+            //    //    _MainAdventure = new EndScreen;
+            //    //case 0:
+            //    //    _MainAdventure = new Bartender();
+            //    //    break;
+            //}
         }
 
         private void SetPreChoiceText()
         {
-            this.textbox_MainAdventure.Text = _MainAdventure.StoryText;
+            this.textbox_MainAdventure_Text.Text = _MainAdventure.StoryText;
             this.button_MainActivity_Choice1.Text = _MainAdventure.Choice1ButtonText;
             this.button_MainActivity_Choice2.Text = _MainAdventure.Choice2ButtonText;
             this.button_MainActivity_Choice3.Text = _MainAdventure.Choice3ButtonText;
@@ -76,29 +79,34 @@ namespace PickYourOwnDestiny.UI
         private void button_MainActivity_Choice1_Click(object sender, EventArgs e)
         {
             DisableAllChoices();
-            this.textbox_MainAdventure.Text = _MainAdventure.Choice1ResultText;
+            this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice1ResultText;
             PostTextChoice();
         }
 
         private void button_MainActivity_Choice2_Click(object sender, EventArgs e)
         {
             DisableAllChoices();
-            this.textbox_MainAdventure.Text = _MainAdventure.Choice2ResultText;
+            this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice2ResultText;
             PostTextChoice();
         }
 
         private void button_MainActivity_Choice3_Click(object sender, EventArgs e)
         {
             DisableAllChoices();
-            this.textbox_MainAdventure.Text = _MainAdventure.Choice3ResultText;
+            this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice3ResultText;
             PostTextChoice();
         }
 
         private void button_MainActivity_Continue_Click(object sender, EventArgs e)
         {
-            _Character.HitPoints = 0;
+            CheckForGameOver();
+            CharacterCreation.currentCharacter.StoryModeTracker += 1;
+            PlayGame();
+        }
 
-            if (_Character.HitPoints <= 0)
+        private void CheckForGameOver()
+        {
+            if (CharacterCreation.currentCharacter.HitPoints <= 0)
             {
                 this.Hide();
                 Death death = new Death();
@@ -125,6 +133,23 @@ namespace PickYourOwnDestiny.UI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button_MainAdventure_TalkToBartender_Click(object sender, EventArgs e)
+        {
+
+            if (_canBartander)
+            {
+                _MainAdventure = dbHelper.Instance.getAdventure(0);
+                _canBartander = false;
+                SetPreChoiceText();
+
+            }
+            else
+            {
+                var message = MessageBox.Show("The bar bouncer stops you from going up to see the Bartender", "Go Sit Back Down", MessageBoxButtons.OK);
+            }
 
         }
     }

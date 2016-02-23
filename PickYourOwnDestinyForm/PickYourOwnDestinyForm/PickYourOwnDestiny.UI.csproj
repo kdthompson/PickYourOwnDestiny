@@ -73,6 +73,12 @@
     <Compile Include="CharacterCreation.Designer.cs">
       <DependentUpon>CharacterCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="CharacterLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacterLoad.Designer.cs">
+      <DependentUpon>CharacterLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbHelper.cs" />
     <Compile Include="Death.cs">
       <SubType>Form</SubType>
@@ -108,6 +114,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CharacterCreation.resx">
       <DependentUpon>CharacterCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CharacterLoad.resx">
+      <DependentUpon>CharacterLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Death.resx">
       <DependentUpon>Death.cs</DependentUpon>

@@ -33,13 +33,15 @@
             this.saveGame_MenuItem_MainActivity = new System.Windows.Forms.ToolStripMenuItem();
             this.loadGame_MenuItem_MainActivity = new System.Windows.Forms.ToolStripMenuItem();
             this.quit_MenuItem_MainActivity = new System.Windows.Forms.ToolStripMenuItem();
-            this.textbox_MainAdventure = new System.Windows.Forms.TextBox();
+            this.textbox_MainAdventure_Text = new System.Windows.Forms.TextBox();
             this.button_MainActivity_Choice1 = new System.Windows.Forms.Button();
             this.button_MainActivity_Choice2 = new System.Windows.Forms.Button();
             this.button_MainActivity_Choice3 = new System.Windows.Forms.Button();
             this.button_MainActivity_Continue = new System.Windows.Forms.Button();
-            this.progressBar_HitPoints = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox_MainAdventure_HitPoints = new System.Windows.Forms.TextBox();
+            this.textBox_MainAdventure_CharacterName = new System.Windows.Forms.TextBox();
+            this.button_MainAdventure_TalkToBartender = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,17 +85,17 @@
             this.quit_MenuItem_MainActivity.Text = "Quit";
             this.quit_MenuItem_MainActivity.Click += new System.EventHandler(this.quit_MenuItem_MainActivity_Click);
             // 
-            // textbox_MainAdventure
+            // textbox_MainAdventure_Text
             // 
-            this.textbox_MainAdventure.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_MainAdventure.Location = new System.Drawing.Point(76, 54);
-            this.textbox_MainAdventure.Multiline = true;
-            this.textbox_MainAdventure.Name = "textbox_MainAdventure";
-            this.textbox_MainAdventure.ReadOnly = true;
-            this.textbox_MainAdventure.Size = new System.Drawing.Size(696, 291);
-            this.textbox_MainAdventure.TabIndex = 1;
-            this.textbox_MainAdventure.TabStop = false;
-            this.textbox_MainAdventure.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textbox_MainAdventure_Text.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_MainAdventure_Text.Location = new System.Drawing.Point(76, 54);
+            this.textbox_MainAdventure_Text.Multiline = true;
+            this.textbox_MainAdventure_Text.Name = "textbox_MainAdventure_Text";
+            this.textbox_MainAdventure_Text.ReadOnly = true;
+            this.textbox_MainAdventure_Text.Size = new System.Drawing.Size(696, 291);
+            this.textbox_MainAdventure_Text.TabIndex = 1;
+            this.textbox_MainAdventure_Text.TabStop = false;
+            this.textbox_MainAdventure_Text.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button_MainActivity_Choice1
             // 
@@ -141,16 +143,6 @@
             this.button_MainActivity_Continue.Visible = false;
             this.button_MainActivity_Continue.Click += new System.EventHandler(this.button_MainActivity_Continue_Click);
             // 
-            // progressBar_HitPoints
-            // 
-            this.progressBar_HitPoints.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.progressBar_HitPoints.ForeColor = System.Drawing.Color.Red;
-            this.progressBar_HitPoints.Location = new System.Drawing.Point(156, 17);
-            this.progressBar_HitPoints.Name = "progressBar_HitPoints";
-            this.progressBar_HitPoints.Size = new System.Drawing.Size(143, 18);
-            this.progressBar_HitPoints.TabIndex = 6;
-            this.progressBar_HitPoints.Click += new System.EventHandler(this.progressBar1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -161,18 +153,50 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Hit Points";
             // 
+            // textBox_MainAdventure_HitPoints
+            // 
+            this.textBox_MainAdventure_HitPoints.Location = new System.Drawing.Point(157, 14);
+            this.textBox_MainAdventure_HitPoints.Name = "textBox_MainAdventure_HitPoints";
+            this.textBox_MainAdventure_HitPoints.ReadOnly = true;
+            this.textBox_MainAdventure_HitPoints.Size = new System.Drawing.Size(24, 20);
+            this.textBox_MainAdventure_HitPoints.TabIndex = 0;
+            this.textBox_MainAdventure_HitPoints.TabStop = false;
+            // 
+            // textBox_MainAdventure_CharacterName
+            // 
+            this.textBox_MainAdventure_CharacterName.Location = new System.Drawing.Point(552, 14);
+            this.textBox_MainAdventure_CharacterName.Name = "textBox_MainAdventure_CharacterName";
+            this.textBox_MainAdventure_CharacterName.ReadOnly = true;
+            this.textBox_MainAdventure_CharacterName.Size = new System.Drawing.Size(100, 20);
+            this.textBox_MainAdventure_CharacterName.TabIndex = 0;
+            this.textBox_MainAdventure_CharacterName.TabStop = false;
+            // 
+            // button_MainAdventure_TalkToBartender
+            // 
+            this.button_MainAdventure_TalkToBartender.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_MainAdventure_TalkToBartender.Location = new System.Drawing.Point(491, 367);
+            this.button_MainAdventure_TalkToBartender.Name = "button_MainAdventure_TalkToBartender";
+            this.button_MainAdventure_TalkToBartender.Size = new System.Drawing.Size(281, 39);
+            this.button_MainAdventure_TalkToBartender.TabIndex = 8;
+            this.button_MainAdventure_TalkToBartender.TabStop = false;
+            this.button_MainAdventure_TalkToBartender.Text = "Talk to Bartender";
+            this.button_MainAdventure_TalkToBartender.UseVisualStyleBackColor = true;
+            this.button_MainAdventure_TalkToBartender.Click += new System.EventHandler(this.button_MainAdventure_TalkToBartender_Click);
+            // 
             // MainAdventureScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 539);
+            this.Controls.Add(this.button_MainAdventure_TalkToBartender);
+            this.Controls.Add(this.textBox_MainAdventure_CharacterName);
+            this.Controls.Add(this.textBox_MainAdventure_HitPoints);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar_HitPoints);
             this.Controls.Add(this.button_MainActivity_Continue);
             this.Controls.Add(this.button_MainActivity_Choice3);
             this.Controls.Add(this.button_MainActivity_Choice2);
             this.Controls.Add(this.button_MainActivity_Choice1);
-            this.Controls.Add(this.textbox_MainAdventure);
+            this.Controls.Add(this.textbox_MainAdventure_Text);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainAdventureScreen";
@@ -191,12 +215,14 @@
         private System.Windows.Forms.ToolStripMenuItem saveGame_MenuItem_MainActivity;
         private System.Windows.Forms.ToolStripMenuItem loadGame_MenuItem_MainActivity;
         private System.Windows.Forms.ToolStripMenuItem quit_MenuItem_MainActivity;
-        private System.Windows.Forms.TextBox textbox_MainAdventure;
+        private System.Windows.Forms.TextBox textbox_MainAdventure_Text;
         private System.Windows.Forms.Button button_MainActivity_Choice1;
         private System.Windows.Forms.Button button_MainActivity_Choice2;
         private System.Windows.Forms.Button button_MainActivity_Choice3;
         private System.Windows.Forms.Button button_MainActivity_Continue;
-        private System.Windows.Forms.ProgressBar progressBar_HitPoints;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_MainAdventure_HitPoints;
+        private System.Windows.Forms.TextBox textBox_MainAdventure_CharacterName;
+        private System.Windows.Forms.Button button_MainAdventure_TalkToBartender;
     }
 }

@@ -8,15 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using PickYourOwnDestiny.Entities;
 
 namespace PickYourOwnDestiny.UI
 {
     public partial class CharacterCreation : Form
     {
-
         //RadioButton m_radiogroup1Checked = null;
-        
-        int mStrength = 0, mDex = 0, mKnow = 0;
+        public static Character currentCharacter = new Character();
+        int HEROPOINTS = 5, HITPOINTS = 10;
         String mCharRace = "", mCharClass = "";
         int HSTR = 2, ESTR = 1, DSTR = 3, HDEX = 2, EDEX = 3, DDEX = 1, HKNOW = 2, EKNOW = 3, DKNOW = 1;
         int MSTR = 1, RSTR = 2, WSTR = 3, MDEX = 1, RDEX = 3, WDEX = 2, MKNOW = 3, RKNOW = 2, WKNOW = 1;
@@ -150,15 +150,18 @@ namespace PickYourOwnDestiny.UI
                 int mBtnStrength = Int32.Parse(tbStrength.Text);
                 int mBtnDex = Int32.Parse(tbDex.Text);
                 int mBtnKnow = Int32.Parse(tbKnow.Text);
-                String mConnectionString="c:\\PYOD\\PYOD.db";
-                dbHelper mDBHelper = new dbHelper(mConnectionString);
-                if (mDBHelper.createCharacter(tbCharName.Text.ToString(), mCharRace, mCharClass, mBtnStrength, mBtnDex, mBtnKnow))
+                dbHelper mDBHelper = dbHelper.Instance;
+                if (mDBHelper.createCharacter(tbCharName.Text.ToString(), mCharRace, mCharClass, mBtnStrength, mBtnDex, mBtnKnow,HITPOINTS,HEROPOINTS))
                 {
-                    MessageBox.Show("Yay!");
+                    MessageBox.Show("CONGRATULATIONS! You may now go forth and pick your destiny!");
+                    currentCharacter = new Character(tbCharName.Text.ToString(), mCharClass, mCharRace, mBtnStrength, mBtnDex, mBtnKnow, HITPOINTS, HEROPOINTS);
+                    MainAdventureScreen f4 = new MainAdventureScreen();
+                    this.Hide();
+                    f4.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Awww!");
+                    MessageBox.Show("Magical difficulties! Character did not come forth!");
                 }
 
             }
