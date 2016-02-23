@@ -27,7 +27,10 @@ namespace PickYourOwnDestiny.UI
 
         private void button_CharacterLoad_LoadCharater_Click(object sender, EventArgs e)
         {
-            //dbHelper.Instance.
+            CharacterCreation.currentCharacter = dbHelper.Instance.getCharacter(cbCharacters.Text.ToString());
+            this.Hide();
+            MainAdventureScreen mas = new MainAdventureScreen();
+            mas.Show();
         }
     }
 }

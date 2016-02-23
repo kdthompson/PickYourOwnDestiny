@@ -79,6 +79,28 @@ namespace PickYourOwnDestiny.UI
             }
             return _Adventure;
         }
+        public Character getCharacter(string characterName)
+        {
+            ArrayList characterList = new ArrayList();
+            string sql = String.Format("select * from Character where Name = '{0}'", characterName);
+            Character _Character = null;
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader sr = cmd.ExecuteReader();
+            while (sr.Read())
+            {
+                int max = sr.FieldCount;
+
+                for (int x = 0; x < max; x++)
+                {
+                    characterList.Add(sr.GetValue(x));
+                }
+
+
+                _Character = new Character(characterList);
+
+            }
+            return _Character;
+        }
 
         public ArrayList getAtributeList(String tableName,String fieldName, String whereClause)
         {

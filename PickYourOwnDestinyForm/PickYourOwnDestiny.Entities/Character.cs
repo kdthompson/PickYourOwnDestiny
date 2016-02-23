@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,6 +51,18 @@ namespace PickYourOwnDestiny.Entities
             this.HitPoints = mHitPoints;
             this.HeroPoints = mHeroPoints;
             this.StoryModeTracker = 1;
+        }
+        public Character(ArrayList Character)
+        {
+            this.Name = Character[1].ToString();
+            this.CharacterRace = Character[2].ToString();
+            this.CharacterClass = Character[3].ToString();
+            this.Strength = Int32.Parse(Character[4].ToString());
+            this.Dex = Int32.Parse(Character[5].ToString());
+            this.Knowledge = Int32.Parse(Character[6].ToString());
+            this.HitPoints = Int32.Parse(Character[7].ToString());
+            this.HeroPoints = Int32.Parse(Character[8].ToString());
+            this.StoryModeTracker = Int32.Parse(Character[9].ToString());
         }
 
     }
