@@ -34,9 +34,17 @@ namespace PickYourOwnDestiny.UI
             //_MainAdventure = new AlleyBrawlAdventure();
             //textBox_MainAdventure_HitPoints.Text = CharacterCreation.currentCharacter.HitPoints.ToString();
             //textBox_MainAdventure_CharacterName.Text = CharacterCreation.currentCharacter.Name;
+            if (CharacterCreation.currentCharacter.StoryModeTracker == 2)
+            {
+                CharacterCreation.currentCharacter.HitPoints = 0;
+                CheckForGameOver();
+            }
+            else
+            {
+                _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
+                SetPreChoiceText();
+            }
 
-            _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
-            SetPreChoiceText();
 
             //switch (CharacterCreation.currentCharacter.StoryModeTracker)
             //{
@@ -108,7 +116,7 @@ namespace PickYourOwnDestiny.UI
         {
             if (CharacterCreation.currentCharacter.HitPoints <= 0)
             {
-                this.Hide();
+                this.Close();
                 Death death = new Death();
                 death.Show();
             }
