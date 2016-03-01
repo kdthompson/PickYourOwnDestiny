@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PickYourOwnDestiny.Entities;
 using PYOD_Slpash;
+using System.Collections;
 
 namespace PickYourOwnDestiny.UI
 {
@@ -17,6 +18,8 @@ namespace PickYourOwnDestiny.UI
         private bool _canBartander = true;
 
         Adventure _MainAdventure;
+        private ArrayList ChoiceReturn;
+        int ChoiceStat;
 
 
         public MainAdventureScreen()
@@ -83,11 +86,20 @@ namespace PickYourOwnDestiny.UI
         {
             this.button_MainActivity_Continue.Show();
         }
-
+        private void ChoiceChk(String multi, String success)
+        {
+            ChoiceReturn = dbHelper.Instance.returnChallenge("Adventure", multi, success, "where StoryModeTracker = " + CharacterCreation.currentCharacter.StoryModeTracker);
+        }
+        private void StatGrab(String stat)
+        {
+            ChoiceStat = dbHelper.Instance.returnCharStat(stat , "Character", "where Name = '" + CharacterCreation.currentCharacter.Name + "'");
+        }        
         private void button_MainActivity_Choice1_Click(object sender, EventArgs e)
         {
             DisableAllChoices();
             this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice1ResultText;
+            ChoiceChk("COneMultiplier", "COneCQSuccess");
+            //StatGrab("COneStat");
             PostTextChoice();
         }
 
@@ -95,6 +107,8 @@ namespace PickYourOwnDestiny.UI
         {
             DisableAllChoices();
             this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice2ResultText;
+            ChoiceChk("CTwoMultiplier", "CtwoCQSuccess");
+            //StatGrab("CTwoStat");
             PostTextChoice();
         }
 
@@ -102,6 +116,8 @@ namespace PickYourOwnDestiny.UI
         {
             DisableAllChoices();
             this.textbox_MainAdventure_Text.Text = _MainAdventure.Choice3ResultText;
+            ChoiceChk("CThreeMultiplier", "CThreeCQSuccess");
+            //StatGrab("CThreeStat");
             PostTextChoice();
         }
 
@@ -111,9 +127,28 @@ namespace PickYourOwnDestiny.UI
             CharacterCreation.currentCharacter.StoryModeTracker += 1;
             PlayGame();
         }
+        private int hpCons()
+        {
+            int success = Convert.ToInt32(ChoiceReturn[1]);
+            Random rng = new Random();
+            if (success == 1)
+                return 1;
+            if (success == 0 || ChoiceStat + rng.Next(0, Convert.ToInt32(ChoiceReturn[0])) > success)
+                return 0;
+            else
+                return success - (ChoiceStat + rng.Next(0, Convert.ToInt32(ChoiceReturn[0])));
+        }
+        private int hpAdjust(int hpCons)
+        {
+            return dbHelper.Instance.returnCharStat("HitPoints", "Character", "where Name = '" + CharacterCreation.currentCharacter.Name + "'") - hpCons;
+        }
 
         private void CheckForGameOver()
         {
+            if (CharacterCreation.currentCharacter.HitPoints > 0)
+            {
+                CharacterCreation.currentCharacter.HitPoints -= hpAdjust(hpCons());
+            }
             if (CharacterCreation.currentCharacter.HitPoints <= 0)
             {
                 this.Close();
@@ -152,7 +187,6 @@ namespace PickYourOwnDestiny.UI
                 _MainAdventure = dbHelper.Instance.getAdventure(0);
                 _canBartander = false;
                 SetPreChoiceText();
-
             }
             else
             {
@@ -161,4 +195,5 @@ namespace PickYourOwnDestiny.UI
 
         }
     }
+    
 }

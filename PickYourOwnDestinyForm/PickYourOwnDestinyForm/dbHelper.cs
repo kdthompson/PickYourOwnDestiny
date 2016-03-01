@@ -117,6 +117,33 @@ namespace PickYourOwnDestiny.UI
 
             return attributeList;
         }
+        public int returnCharStat(String tableName, String fieldName, String where)
+        {
+            String holder = String.Empty;
+            String search = String.Format("SELECT {0} from {1} {2}", fieldName, tableName, where);
+            SQLiteCommand c = new SQLiteCommand(search, con);
+            SQLiteDataReader dr = c.ExecuteReader();
+            dr.Read();
+            int max = dr.FieldCount;
+            for (int i = 0; i < max; i++)
+            {
+                holder = dr[i++].ToString();
+            }
+            return int.Parse(holder);
+        }
+        public ArrayList returnChallenge(String tableName, String fieldOne, String fieldTwo, String where)
+        {
+            ArrayList holder = new ArrayList();
+            String search = String.Format("SELECT {0}, {1} from {2} {3}", fieldOne, fieldTwo, tableName, where);
+            SQLiteCommand c = new SQLiteCommand(search, con);
+            SQLiteDataReader dr = c.ExecuteReader();
+            int max = dr.FieldCount;
+            for (int i = 0; i < max; i++)
+            {
+                holder.Add(dr[i++]);
+            }
+            return holder;
+        }
 
     }
 }

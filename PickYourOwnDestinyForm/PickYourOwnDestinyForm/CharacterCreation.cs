@@ -22,8 +22,7 @@ namespace PickYourOwnDestiny.UI
         int MSTR = 1, RSTR = 2, WSTR = 3, MDEX = 1, RDEX = 3, WDEX = 2, MKNOW = 3, RKNOW = 2, WKNOW = 1;
         public CharacterCreation()
         {
-            InitializeComponent();
-            
+            InitializeComponent();          
             
         }
         private void rbH_CheckedChanged(object sender, EventArgs e)
