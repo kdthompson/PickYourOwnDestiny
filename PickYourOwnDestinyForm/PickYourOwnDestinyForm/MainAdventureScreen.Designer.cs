@@ -50,9 +50,9 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Right;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenu_MainActivity});
-            this.menuStrip1.Location = new System.Drawing.Point(768, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(902, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(86, 539);
+            this.menuStrip1.Size = new System.Drawing.Size(86, 605);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -92,7 +92,7 @@
             this.textbox_MainAdventure_Text.Multiline = true;
             this.textbox_MainAdventure_Text.Name = "textbox_MainAdventure_Text";
             this.textbox_MainAdventure_Text.ReadOnly = true;
-            this.textbox_MainAdventure_Text.Size = new System.Drawing.Size(696, 291);
+            this.textbox_MainAdventure_Text.Size = new System.Drawing.Size(810, 356);
             this.textbox_MainAdventure_Text.TabIndex = 1;
             this.textbox_MainAdventure_Text.TabStop = false;
             this.textbox_MainAdventure_Text.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -100,7 +100,7 @@
             // button_MainActivity_Choice1
             // 
             this.button_MainActivity_Choice1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_MainActivity_Choice1.Location = new System.Drawing.Point(76, 367);
+            this.button_MainActivity_Choice1.Location = new System.Drawing.Point(76, 440);
             this.button_MainActivity_Choice1.Name = "button_MainActivity_Choice1";
             this.button_MainActivity_Choice1.Size = new System.Drawing.Size(408, 39);
             this.button_MainActivity_Choice1.TabIndex = 2;
@@ -111,7 +111,7 @@
             // button_MainActivity_Choice2
             // 
             this.button_MainActivity_Choice2.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_MainActivity_Choice2.Location = new System.Drawing.Point(76, 412);
+            this.button_MainActivity_Choice2.Location = new System.Drawing.Point(76, 485);
             this.button_MainActivity_Choice2.Name = "button_MainActivity_Choice2";
             this.button_MainActivity_Choice2.Size = new System.Drawing.Size(408, 39);
             this.button_MainActivity_Choice2.TabIndex = 3;
@@ -122,7 +122,7 @@
             // button_MainActivity_Choice3
             // 
             this.button_MainActivity_Choice3.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_MainActivity_Choice3.Location = new System.Drawing.Point(76, 457);
+            this.button_MainActivity_Choice3.Location = new System.Drawing.Point(76, 530);
             this.button_MainActivity_Choice3.Name = "button_MainActivity_Choice3";
             this.button_MainActivity_Choice3.Size = new System.Drawing.Size(408, 39);
             this.button_MainActivity_Choice3.TabIndex = 4;
@@ -133,9 +133,9 @@
             // button_MainActivity_Continue
             // 
             this.button_MainActivity_Continue.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_MainActivity_Continue.Location = new System.Drawing.Point(491, 457);
+            this.button_MainActivity_Continue.Location = new System.Drawing.Point(511, 530);
             this.button_MainActivity_Continue.Name = "button_MainActivity_Continue";
-            this.button_MainActivity_Continue.Size = new System.Drawing.Size(281, 39);
+            this.button_MainActivity_Continue.Size = new System.Drawing.Size(375, 39);
             this.button_MainActivity_Continue.TabIndex = 5;
             this.button_MainActivity_Continue.TabStop = false;
             this.button_MainActivity_Continue.Text = "Continue";
@@ -149,34 +149,36 @@
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(73, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 18);
+            this.label1.Size = new System.Drawing.Size(82, 18);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Hit Points";
+            this.label1.Text = "Hit Points:";
             // 
             // textBox_MainAdventure_HitPoints
             // 
+            this.textBox_MainAdventure_HitPoints.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_MainAdventure_HitPoints.Location = new System.Drawing.Point(157, 14);
             this.textBox_MainAdventure_HitPoints.Name = "textBox_MainAdventure_HitPoints";
             this.textBox_MainAdventure_HitPoints.ReadOnly = true;
-            this.textBox_MainAdventure_HitPoints.Size = new System.Drawing.Size(24, 20);
+            this.textBox_MainAdventure_HitPoints.Size = new System.Drawing.Size(24, 13);
             this.textBox_MainAdventure_HitPoints.TabIndex = 0;
             this.textBox_MainAdventure_HitPoints.TabStop = false;
             // 
             // textBox_MainAdventure_CharacterName
             // 
-            this.textBox_MainAdventure_CharacterName.Location = new System.Drawing.Point(552, 14);
+            this.textBox_MainAdventure_CharacterName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_MainAdventure_CharacterName.Location = new System.Drawing.Point(698, 12);
             this.textBox_MainAdventure_CharacterName.Name = "textBox_MainAdventure_CharacterName";
             this.textBox_MainAdventure_CharacterName.ReadOnly = true;
-            this.textBox_MainAdventure_CharacterName.Size = new System.Drawing.Size(100, 20);
+            this.textBox_MainAdventure_CharacterName.Size = new System.Drawing.Size(188, 13);
             this.textBox_MainAdventure_CharacterName.TabIndex = 0;
             this.textBox_MainAdventure_CharacterName.TabStop = false;
             // 
             // button_MainAdventure_TalkToBartender
             // 
             this.button_MainAdventure_TalkToBartender.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_MainAdventure_TalkToBartender.Location = new System.Drawing.Point(491, 367);
+            this.button_MainAdventure_TalkToBartender.Location = new System.Drawing.Point(511, 440);
             this.button_MainAdventure_TalkToBartender.Name = "button_MainAdventure_TalkToBartender";
-            this.button_MainAdventure_TalkToBartender.Size = new System.Drawing.Size(281, 39);
+            this.button_MainAdventure_TalkToBartender.Size = new System.Drawing.Size(375, 39);
             this.button_MainAdventure_TalkToBartender.TabIndex = 8;
             this.button_MainAdventure_TalkToBartender.TabStop = false;
             this.button_MainAdventure_TalkToBartender.Text = "Talk to Bartender";
@@ -187,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 539);
+            this.ClientSize = new System.Drawing.Size(988, 605);
             this.Controls.Add(this.button_MainAdventure_TalkToBartender);
             this.Controls.Add(this.textBox_MainAdventure_CharacterName);
             this.Controls.Add(this.textBox_MainAdventure_HitPoints);
