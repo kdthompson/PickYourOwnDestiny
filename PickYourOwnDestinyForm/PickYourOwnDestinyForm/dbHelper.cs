@@ -57,6 +57,7 @@ namespace PickYourOwnDestiny.UI
   
             return true;
         }
+        
         public Adventure getAdventure(int StoryTrackerIndex)
         {
             ArrayList adventureList = new ArrayList();
@@ -117,6 +118,32 @@ namespace PickYourOwnDestiny.UI
 
             return attributeList;
         }
+        public bool SaveCharacter(Character SaveCharacter) 
+        {
+            Boolean SavedSuccess = false;
+
+            con.Open();
+            String sql = "update character set HitPoints = @HitPoints, HeroPoints = @HeroPoints, StoryTracker = @StoryTracker, where Name = @Name";
+            try
+            {
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@HitPoints", SaveCharacter.HitPoints);
+                    cmd.Parameters.AddWithValue("@HeroPoints", SaveCharacter.HeroPoints);
+                    cmd.Parameters.AddWithValue("@StoryTracker", SaveCharacter.StoryModeTracker);
+                    cmd.Parameters.AddWithValue("@Name", SaveCharacter.Name);
+                    cmd.ExecuteNonQuery();
+                }
+                SavedSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                SavedSuccess = false;
+            }
+            return SavedSuccess;
+        }
+        
 
     }
 }
