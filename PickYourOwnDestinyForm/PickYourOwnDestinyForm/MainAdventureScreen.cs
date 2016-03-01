@@ -44,7 +44,8 @@ namespace PickYourOwnDestiny.UI
                 _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
                 SetPreChoiceText();
             }
-
+            SetHitpoints();
+            SetCharacterName();
 
             //switch (CharacterCreation.currentCharacter.StoryModeTracker)
             //{
@@ -69,6 +70,16 @@ namespace PickYourOwnDestiny.UI
             //    //    _MainAdventure = new Bartender();
             //    //    break;
             //}
+        }
+
+        private void SetCharacterName()
+        {
+            this.textBox_MainAdventure_CharacterName.Text = CharacterCreation.currentCharacter.Name;
+        }
+
+        private void SetHitpoints()
+        {
+            this.textBox_MainAdventure_HitPoints.Text = CharacterCreation.currentCharacter.HitPoints.ToString();
         }
 
         private void SetPreChoiceText()
@@ -146,19 +157,16 @@ namespace PickYourOwnDestiny.UI
 
         private void button_MainAdventure_TalkToBartender_Click(object sender, EventArgs e)
         {
-
-            if (_canBartander)
+            if (!_canBartander)
+            {
+                var message = MessageBox.Show("The bar bouncer stops you from going up to see the Bartender", "Go Sit Back Down", MessageBoxButtons.OK);
+            }
+            else
             {
                 _MainAdventure = dbHelper.Instance.getAdventure(0);
                 _canBartander = false;
                 SetPreChoiceText();
-
             }
-            else
-            {
-                var message = MessageBox.Show("The bar bouncer stops you from going up to see the Bartender", "Go Sit Back Down", MessageBoxButtons.OK);
-            }
-
         }
     }
 }
