@@ -28,48 +28,11 @@ namespace PickYourOwnDestiny.UI
         private void PlayGame()
         {
             this.Text = "Pick Your Own Destiny";
-
-            //Test purposes only
-            //CharacterCreation.currentCharacter.StoryModeTracker = 5;
-            //_MainAdventure = new AlleyBrawlAdventure();
-            //textBox_MainAdventure_HitPoints.Text = CharacterCreation.currentCharacter.HitPoints.ToString();
-            //textBox_MainAdventure_CharacterName.Text = CharacterCreation.currentCharacter.Name;
-            if (CharacterCreation.currentCharacter.StoryModeTracker == 2)
-            {
-                CharacterCreation.currentCharacter.HitPoints = 0;
-                CheckForGameOver();
-            }
-            else
-            {
-                _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
-                SetPreChoiceText();
-            }
+            
+            _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
+            SetPreChoiceText();
             SetHitpoints();
             SetCharacterName();
-
-            //switch (CharacterCreation.currentCharacter.StoryModeTracker)
-            //{
-            //    case 1:
-            //        _MainAdventure = dbHelper.Instance.getAdventure(CharacterCreation.currentCharacter.StoryModeTracker);
-            //        break;
-            //    //case 2:
-            //    //    _MainAdventure = new CardGame();
-            //    //    break;
-            //    //case 3:
-            //    //    _MainAdventure = new Riddler();
-            //    //    break;
-            //    //case 4:
-            //    //    _MainAdventure = new BarChallenge();
-            //    //    break;
-            //    case 5:
-            //        _MainAdventure = new AlleyBrawlAdventure();
-            //        break;
-            //    //case 6:
-            //    //    _MainAdventure = new EndScreen;
-            //    //case 0:
-            //    //    _MainAdventure = new Bartender();
-            //    //    break;
-            //}
         }
 
         private void SetCharacterName()
