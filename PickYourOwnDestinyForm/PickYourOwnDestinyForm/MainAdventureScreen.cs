@@ -47,6 +47,7 @@ namespace PickYourOwnDestiny.UI
 
         private void SetPreChoiceText()
         {
+            EnableAllChoices();
             this.textbox_MainAdventure_Text.Text = _MainAdventure.StoryText;
             this.button_MainActivity_Choice1.Text = _MainAdventure.Choice1ButtonText;
             this.button_MainActivity_Choice2.Text = _MainAdventure.Choice2ButtonText;
@@ -106,6 +107,13 @@ namespace PickYourOwnDestiny.UI
             this.button_MainActivity_Choice1.Enabled = false;
             this.button_MainActivity_Choice2.Enabled = false;
             this.button_MainActivity_Choice3.Enabled = false;
+        }
+
+        private void EnableAllChoices()
+        {
+            this.button_MainActivity_Choice1.Enabled = true;
+            this.button_MainActivity_Choice2.Enabled = true;
+            this.button_MainActivity_Choice3.Enabled = true;
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
